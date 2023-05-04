@@ -1,13 +1,14 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/modules.xml
+/vcs.xml
+/misc.xml
+/Java_POO.iml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-modules.xml
-vcs.xml
-workspace.xml
-misc.xml
-Java_POO.iml
+# out ignored files
+/out/
