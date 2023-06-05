@@ -9,6 +9,14 @@ public class ContaBanco {
     private boolean status;
 
     // Métodos personalizados
+    public void estadoAtual() {
+        System.out.println("----------------------");
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo: " + this.getSaldo());
+        System.out.println("Status: " + this.getStatus());
+    }
     public void abrirConta(String tipo) {
         this.setTipo(tipo);
         this.setStatus(true);
@@ -39,12 +47,35 @@ public class ContaBanco {
         }
     }
 
-    public void sacar() {
-
+    public void sacar(float valor) {
+        if(this.getStatus() == true) {
+            if(this.getSaldo() > valor) {
+                this.setSaldo(this.getSaldo() - valor);
+            } else {
+                System.out.println("Saldo insuficiente!");
+            }
+        } else {
+            System.out.println("Impossível sacar!");
+        }
     }
 
     public void pagarMensal() {
+        int valor = 0;
+        if(this.tipo == "CC") {
+            valor = 12;
+        } else if (this.tipo == "CP") {
+            valor = 20;
+        }
 
+        if (this.getStatus() == true) {
+            if (this.getSaldo() > valor){
+                this.setSaldo(this.getSaldo() - valor);
+            } else {
+                System.out.println("Saldo insuficiente");
+            }
+        } else {
+            System.out.println("Impossivel pagar");
+        }
     }
     // Métodos Especiais
     public ContaBanco() {
